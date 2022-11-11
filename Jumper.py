@@ -34,7 +34,6 @@ def data_gen(sims, trials, probs):
 
 x_data = list(range(1, jumps+2))
 y_data = data_gen(simulations, jumps, probability)
-print(y_data)
 fig = plt.figure(figsize=(10, 5))
 
 plt.bar(x_data, data_gen(simulations, jumps, probability))
