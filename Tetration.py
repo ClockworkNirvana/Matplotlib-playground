@@ -1,6 +1,10 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
+# Variables
+tet_base = 0.8
+x_range = [1, 30]
+
 
 # Put your function here
 def recur_tet(b, n):
@@ -14,24 +18,17 @@ def tetration(base, power):
     output = np.empty(len(power))
     for i in range(len(power)):
         output[i] = recur_tet(base, power[i])
-        print(output[i])
     return output
 
 
-# Generate an array
-x_data = np.arange(1, 4)
-print(x_data)
+x_data = np.arange(x_range[0], x_range[1] + 1)
 
-# Variables
-tet_base = -1.1
 s = tetration(tet_base, x_data)
 
 fig, ax = plt.subplots()
-ax.plot(x_data, s, label='test')
+ax.plot(x_data, s)
 plt.yscale(value="linear")
-plt.legend()
-ax.set(xlabel='x', ylabel='y',
-       title=str(tet_base) + '\u2191\u2191x')
+ax.set(xlabel='x', ylabel='$\ ^x$b', title='$\ ^x${}'.format(str(tet_base)))
 ax.grid()
 
 plt.show()
