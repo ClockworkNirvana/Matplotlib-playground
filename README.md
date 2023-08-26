@@ -33,3 +33,8 @@ Variable intake
  - Number of jumps
  - Probability of moving left when jumping
  - Use modified rules?
+
+# plotDictVlaues
+
+From a dictionary of the form {key:[x,y], ...}, plots all the points x,y
+Ignores key entirely
